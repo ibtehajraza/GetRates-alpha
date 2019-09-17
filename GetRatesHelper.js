@@ -24,7 +24,8 @@ exports.getRates = (currency, callBack) => {
     let currArr = currency.split(',');
     //console.log(currArr[0]);
 
-    let stringForfile = "{";
+    const date = new Date(new Date().toString().split('GMT')[0]+' UTC').toISOString().split('.')[0].replace('T',' ');
+    let stringForfile = `{ "date_time" : "${date}",`;
 
     currency = encodeURIComponent(currency);
 
